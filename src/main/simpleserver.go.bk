@@ -1,0 +1,14 @@
+package main
+
+import (
+	"net/http"
+)
+
+func main() {
+	http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
+		w.Write([]byte("Go server listening at /"))
+	})
+
+	http.ListenAndServe(":8080", nil)
+}
+
